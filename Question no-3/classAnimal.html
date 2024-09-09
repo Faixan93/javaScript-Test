@@ -17,7 +17,12 @@
         }
       }
 
-      class Dog extends Animal {
+      class Dog {
+        constructor(name) {
+          const animal = new Animal(name);
+          this.name = animal.name;
+        }
+
         speak() {
           console.log(`${this.name} barks.`);
         }
