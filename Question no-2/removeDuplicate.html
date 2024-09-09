@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Remove duplicate</title>
+  </head>
+  <body>
+    <script>
+      function removeDuplicates(array) {
+        return array.filter(
+          (item, index) =>
+            array.findIndex(
+              (element) => JSON.stringify(element) === JSON.stringify(item)
+            ) === index
+        );
+      }
+
+      const input = [
+        1,
+        2,
+        "hello",
+        "world",
+        { name: "Alice", age: 30 },
+        { name: "Alice", age: 30 },
+        [1, 2, 3],
+        [1, 2, 3],
+        "hello",
+        3,
+        [4, 5, { nested: "object" }],
+        [4, 5, { nested: "object" }],
+        { nested: [1, 2, 3] },
+        { nested: [1, 2, 3] },
+      ];
+
+      const result = removeDuplicates(input);
+      console.log(result);
+    </script>
+  </body>
+</html>
